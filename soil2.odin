@@ -131,7 +131,7 @@ foreign _LIB_ {
 	load_OGL_texture :: proc(
 		filename: cstring,
 		force_channels: Image_Format,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -156,7 +156,7 @@ foreign _LIB_ {
 		y_pos_file, y_neg_file: cstring,
 		z_pos_file, z_neg_file: cstring,
 		force_channels: Image_Format,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -177,7 +177,7 @@ foreign _LIB_ {
 		filename: cstring,
 		face_order: [6]u8,
 		force_channels: Image_Format,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -196,7 +196,7 @@ foreign _LIB_ {
 		filename: cstring,
 		fake_HDR_format: HDR_Type,
 		rescale_to_max: b32,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -216,7 +216,7 @@ foreign _LIB_ {
 		buffer: [^]u8,
 		buffer_length: i32,
 		force_channels: Image_Format,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -250,7 +250,7 @@ foreign _LIB_ {
 		z_pos_buffer: [^]u8, z_pos_buffer_length: i32,
 		z_neg_buffer: [^]u8, z_neg_buffer_length: i32,
 		force_channels: Image_Format,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -273,7 +273,7 @@ foreign _LIB_ {
 		buffer_length: i32,
 		face_order: [6]u8,
 		force_channels: Image_Format,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -298,7 +298,7 @@ foreign _LIB_ {
 		width: ^i32,
 		height: ^i32,
 		channels: i32,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -323,7 +323,7 @@ foreign _LIB_ {
 		height: i32,
 		channels: i32,
 		face_order: [6]u8,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -456,7 +456,7 @@ foreign _LIB_ {
 	// Loads the DDS texture directly to the GPU memory (if supported).
 	direct_load_DDS :: proc(
 		filename: cstring,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 		loading_as_cubemap: i32,
 	) -> u32 ---
@@ -465,7 +465,7 @@ foreign _LIB_ {
 	direct_load_DDS_from_memory :: proc(
 		buffer: [^]u8,
 		buffer_length: i32,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 		loading_as_cubemap: i32,
 	) -> u32 ---
@@ -473,7 +473,7 @@ foreign _LIB_ {
 	// Loads the PVR texture directly to the GPU memory (if supported).
 	direct_load_PVR :: proc(
 		filename: cstring,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 		loading_as_cubemap: i32,
 	) -> u32 ---
@@ -482,7 +482,7 @@ foreign _LIB_ {
 	direct_load_PVR_from_memory :: proc(
 		buffer: [^]u8,
 		buffer_length: i32,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 		loading_as_cubemap: i32,
 	) -> u32 ---
@@ -490,7 +490,7 @@ foreign _LIB_ {
 	// Loads the ETC1 texture directly to the GPU memory (if supported).
 	direct_load_ETC1 :: proc(
 		filename: cstring,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 
@@ -498,7 +498,7 @@ foreign _LIB_ {
 	direct_load_ETC1_from_memory :: proc(
 		buffer: [^]u8,
 		buffer_length: i32,
-		reuse_texture_ID: b32,
+		reuse_texture_ID: u32,
 		flags: Texture_Flags,
 	) -> u32 ---
 }
